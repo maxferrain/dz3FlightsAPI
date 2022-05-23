@@ -1,0 +1,32 @@
+﻿@model dz3FlightsAPI.Models.EditFlightModel
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Are you sure?</h3>
+<div>
+    <h4>Delete</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Time_Departure)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Time_Registration)
+        </dt>
+    </dl>
+
+    <form asp-action="DelFlight">
+        <input type="hidden" asp-for="Id"/>
+        <input type="submit" value="Delete" class="btn btn-danger"/> |
+        <a asp-action="ListFlight">List of flights</a>
+    </form>
+</div>

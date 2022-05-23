@@ -1,0 +1,45 @@
+﻿@model dz3FlightsAPI.Models.EditFlightModel
+@{
+    ViewData["Title"] = "Creation new flight";
+}
+<h4>New flight</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateFlight" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" class="form-control" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label"></label>
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time_Departure" class="control-label"></label>
+                <input asp-for="Time_Departure" class="form-control" />
+                <span asp-validation-for="Time_Departure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time_Registration" class="control-label"></label>
+                <input asp-for="Time_Registration" class="form-control" />
+                <span asp-validation-for="Time_Registration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @* <a asp-action="Index">Go to main page</a> *@
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
